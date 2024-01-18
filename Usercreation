@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("user creation") {
             steps {
-                sh "sudo useradd Vaishnavi-1"
+                sh "sudo useradd Vaishnavi-2"
             }
         }
         stage ("Verfiy") {
