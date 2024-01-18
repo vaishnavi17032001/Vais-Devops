@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage ("user creation") {
+            steps {
+                sh "sudo useradd Vaishnavi-1"
+            }
+        }
+        stage ("Verfiy") {
+            steps {
+                echo "user has been created"
+            }
+        }
+        stage ("Users list") {
+            steps {
+                sh "cat /etc/passwd"
+            }
+        }
+    }
+}
