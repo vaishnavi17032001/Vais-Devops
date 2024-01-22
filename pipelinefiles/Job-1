@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage("clone"){
+            steps{
+                echo"cloning the code from Github"
+                checkout scm
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "Deploy the code"
+                sh sudo cp -r /var/lib/jenkins/workspace/Job-1/index.html/var/www/html/"
+            }
+        }
+    }
+}
