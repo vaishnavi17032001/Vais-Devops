@@ -1,0 +1,18 @@
+pipeline {
+    agent {label 'Vaishnavi-dev-slave'}
+    stages {
+        stage ('checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage ('Deploy') {
+            steps {
+                sh '''
+                sudo rm -rf /var/www/html/*
+                sudo cp /home/jenkins/.ssh/jenkins/workspace/${JOB_NAME}/index.html /var/www/html/
+                '''
+            }
+        }
+    }
+}
